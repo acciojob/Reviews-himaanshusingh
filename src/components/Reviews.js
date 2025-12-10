@@ -19,10 +19,10 @@ const Reviews = () => {
     <>
       <h1 id="review-heading">Our Reviews</h1>
       <div className="review">
-        <img className="person-img" src={activeRev.image}/>
-        <div className="author" id={"author-" + activeRev.id}>{activeRev.name}</div>
+        <div className="author" id={"author-" + index}>{activeRev.name}</div>
         <div className="job">{activeRev.job}</div>
         <div className="info">{activeRev.text}</div>
+        <img className="person-img" src={activeRev.image}/>
         <button className="prev-btn" onClick={handlePrev}>Previous</button>
         <button className="next-btn" onClick={handleNext}>Next</button>
         <button className="random-btn" onClick={handleRand}>surprise me</button>
