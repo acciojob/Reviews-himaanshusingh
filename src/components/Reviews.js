@@ -19,7 +19,7 @@ const Reviews = () => {
     <>
       <h1 id="review-heading">Our Reviews</h1>
       <div className="review">
-        <div className="author" id={"author-" + index}>{activeRev.name}</div>
+        <div className="author" id={"author-" + activeRev.id}>{activeRev.name}</div>
         <div className="job">{activeRev.job}</div>
         <div className="info">{activeRev.text}</div>
         <img className="person-img" src={activeRev.image}/>
