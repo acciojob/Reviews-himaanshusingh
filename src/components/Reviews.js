@@ -12,7 +12,7 @@ const Reviews = () => {
     if (index < 3) setIndex(++index);
   }
   function handleRand() {
-    setIndex(parseInt(Math.random() * 4));
+    setIndex(Math.floor(Math.random() * reviewsArr.length));
   }
 
   return (
@@ -20,7 +20,7 @@ const Reviews = () => {
       <h1 id="review-heading">Our Reviews</h1>
       <div className="review">
         <img className="person-img" src={activeRev.image}/>
-        <div className="author" id={`author-${activeRev.id}`}>{activeRev.name}</div>
+        <div className="author" id="author-1">{activeRev.name}</div>
         <div className="job">{activeRev.job}</div>
         <div className="info">{activeRev.text}</div>
         <button className="prev-btn" onClick={handlePrev}>Previous</button>
