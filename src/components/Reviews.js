@@ -40,11 +40,11 @@ const Reviews = () => {
   let activeRev = arr[index];
 
   function handlePrev() {
-    setIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+    if (index > 0) setIndex(index - 1);
   }
 
   function handleNext() {
-    setIndex((prevIndex) => prevIndex < arr.length - 1 ? prevIndex + 1 : prevIndex);
+    if (index < arr.length - 1) setIndex(index + 1);
   }
 
   function handleRand() {
@@ -55,10 +55,10 @@ const Reviews = () => {
     <>
       <h1 id="review-heading">Our Reviews</h1>
       <div className="review">
+        <img className="person-img" src={activeRev.image}/>
         <div className="author" id={`author-${activeRev.id}`}>{activeRev.name}</div>
         <div className="job">{activeRev.job}</div>
         <div className="info">{activeRev.text}</div>
-        <img className="person-img" src={activeRev.image}/>
         <button className="prev-btn" onClick={handlePrev}>Previous</button>
         <button className="next-btn" onClick={handleNext}>Next</button>
         <button className="random-btn" onClick={handleRand}>surprise me</button>
