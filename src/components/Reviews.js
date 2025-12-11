@@ -41,10 +41,12 @@ const Reviews = () => {
 
   function handlePrev() {
     if (index > 0) setIndex(index - 1);
+    else setIndex(3);
   }
 
   function handleNext() {
     if (index < arr.length - 1) setIndex(index + 1);
+    else setIndex(0);
   }
 
   function handleRand() {
@@ -59,8 +61,8 @@ const Reviews = () => {
         <div className="author" id={`author-${activeRev.id}`}>{activeRev.name}</div>
         <div className="job">{activeRev.job}</div>
         <div className="info">{activeRev.text}</div>
-        <button className="prev-btn" onClick={handlePrev}>Previous</button>
         <button className="next-btn" onClick={handleNext}>Next</button>
+        <button className="prev-btn" onClick={handlePrev}>Previous</button>
         <button className="random-btn" onClick={handleRand}>surprise me</button>
       </div>
     </>
